@@ -33,3 +33,17 @@ vcsrepo { "/home/vagrant/php-head":
    source => 'https://svn.php.net/repository/php/php-src/trunk',
 }
 
+# buildconf dependencies
+package { ["autoconf2.59", "libtool"]:
+  ensure => present,
+}
+
+# minimal build dependencies
+package { ["gcc", "flex", "bison", "re2c", "lemon", "libxml2-dev"]:
+  ensure => present,
+}
+
+# environment settings needed for building PHP
+file { "/home/vagrant/.bash_aliases":
+  content => "export PHP_AUTOCONF=autoconf2.59",
+}  
