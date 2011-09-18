@@ -5,3 +5,31 @@ file { '/etc/motd':
                  Managed by Vagrant and Puppet.\n"
 }
 
+package { "subversion" :
+  ensure => 'installed',
+}
+
+vcsrepo { "/home/vagrant/php-5.3":
+   require => Package["subversion"],
+   ensure => present,
+   provider => svn, 
+   owner => "vagrant",
+   source => 'https://svn.php.net/repository/php/php-src/branches/PHP_5_3',
+}
+
+vcsrepo { "/home/vagrant/php-5.4":
+   require => Package["subversion"],
+   ensure => present,
+   provider => svn, 
+   owner => "vagrant",
+   source => 'https://svn.php.net/repository/php/php-src/branches/PHP_5_4',
+}   
+
+vcsrepo { "/home/vagrant/php-head":
+   require => Package["subversion"],
+   ensure => present,
+   provider => svn, 
+   owner => "vagrant",
+   source => 'https://svn.php.net/repository/php/php-src/trunk',
+}
+
