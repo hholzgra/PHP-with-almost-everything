@@ -46,4 +46,5 @@ package { ["gcc", "flex", "bison", "re2c", "lemon", "libxml2-dev"]:
 # environment settings needed for building PHP
 file { "/home/vagrant/.bash_aliases":
   content => "export PHP_AUTOCONF=autoconf2.59",
+  owner   => "vagrant",
 }  
