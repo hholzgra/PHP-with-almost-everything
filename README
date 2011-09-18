@@ -1,0 +1,8 @@
+PHP with (almost) everything
+============================
+
+Setting up a VirtualBox VM capale of building and
+testing almost every of the extensions that come
+with PHP (and at some future point  in time with
+most extensions from PECL, too)
+
