@@ -9,4 +9,9 @@ Vagrant::Config.run do |config|
     vm.memory_size = 1024
   end
 
+  config.vm.provision :puppet do |puppet|
+    puppet.manifests_path = "./puppet/manifests"
+    puppet.manifest_file  = "base.pp"
+  end
+
 end
