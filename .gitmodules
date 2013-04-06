@@ -1,3 +1,0 @@
-[submodule "puppet/modules/puppet-vcsrepo"]
-	path = puppet/modules/puppet-vcsrepo
-	url = git@github.com:hholzgra/puppet-vcsrepo.git
